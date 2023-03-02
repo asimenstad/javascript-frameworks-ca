@@ -1,12 +1,14 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import Nav from "../Nav";
+
 function Header() {
   return (
     <header>
-      <nav>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </nav>
+      <div>
+        <Link to="/">Logo</Link>
+      </div>
+      <Nav />
     </header>
   );
 }
