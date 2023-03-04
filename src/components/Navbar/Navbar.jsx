@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Hamburger from "hamburger-react";
 import * as S from "./Navbar.styled";
+import CartIcon from "../CartIcon/CartIcon";
 
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
@@ -20,6 +21,11 @@ function Navbar() {
         </S.MenuItem>
         <S.MenuItem>
           <NavLink to="/contact">Contact</NavLink>
+        </S.MenuItem>
+        <S.MenuItem>
+          <NavLink to="/cart">
+            <CartIcon></CartIcon>
+          </NavLink>
         </S.MenuItem>
       </S.Menu>
     </S.Nav>

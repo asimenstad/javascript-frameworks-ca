@@ -20,12 +20,14 @@ export const MenuWrapper = styled.div`
 export const Menu = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   text-align: center;
   padding: 0;
   @media screen and (min-width: 600px) {
     flex-direction: row;
     display: flex;
+    justify-content: end;
+    width: 100%;
   }
   display: ${(props) => (props.isOpen ? "flex" : "none")};
 `;
@@ -34,6 +36,7 @@ export const MenuItem = styled.li`
   list-style: none;
   > * {
     text-decoration: none;
+    color: #000;
   }
 `;
 
