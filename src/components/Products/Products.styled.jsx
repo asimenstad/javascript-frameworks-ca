@@ -7,4 +7,10 @@ export const ProductsWrapper = styled.div`
   @media screen and (min-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
   }
+  @media screen and (min-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (min-width: 1000px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;

@@ -1,12 +1,13 @@
 import React from "react";
+import { Image } from "./Card.styled";
 
-function Card() {
+function Card(props) {
   return (
     <div>
-      <img />
+      <Image src={props.imageUrl} alt={props.title} />
       <div>
-        <h2>Product name</h2>
-        <p>200 KR</p>
+        <h2>{props.title}</h2>
+        <p>{props.price}</p>
       </div>
       <button>Add to cart</button>
     </div>
