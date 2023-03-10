@@ -23,7 +23,7 @@ function Navbar() {
           <NavLink to="/contact">Contact</NavLink>
         </S.MenuItem>
         <S.MenuItem>
-          <NavLink to="/cart">
+          <NavLink to="/checkout">
             <Cart></Cart>
           </NavLink>
         </S.MenuItem>
