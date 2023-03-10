@@ -1,7 +1,7 @@
 import React from "react";
-import * as S from "./CartIcon.styled";
+import * as S from "./Cart.styled";
 
-function CartIcon() {
+function Cart() {
   return (
     <S.IconWrapper>
       <S.Icon></S.Icon>
@@ -9,4 +9,4 @@ function CartIcon() {
   );
 }
 
-export default CartIcon;
+export default Cart;
