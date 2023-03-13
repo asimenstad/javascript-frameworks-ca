@@ -7,3 +7,9 @@ export const Main = styled.main`
   padding: 20px;
   max-width: 1200px;
 `;
+
+export const Div = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+`;
