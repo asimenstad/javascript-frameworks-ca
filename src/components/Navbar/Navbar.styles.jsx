@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Nav = styled.nav`
   display: flex;
@@ -9,6 +10,11 @@ export const Nav = styled.nav`
   @media screen and (min-width: 600px) {
     flex-direction: row;
   }
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: #000;
 `;
 
 export const MenuWrapper = styled.div`
@@ -34,10 +40,6 @@ export const Menu = styled.ul`
 
 export const MenuItem = styled.li`
   list-style: none;
-  > * {
-    text-decoration: none;
-    color: #000;
-  }
 `;
 
 export const HamburgerWrapper = styled.div`

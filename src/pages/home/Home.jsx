@@ -1,12 +1,13 @@
 import React from "react";
 import Products from "../../components/Products/Products";
+import * as S from "./Home.styles";
 
 function Home() {
   return (
-    <main>
+    <S.Main>
       <h1>Our Products</h1>
       <Products></Products>
-    </main>
+    </S.Main>
   );
 }
 

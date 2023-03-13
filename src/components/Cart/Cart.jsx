@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./Cart.styled";
+import * as S from "./Cart.styles";
 
 function Cart() {
   return (
