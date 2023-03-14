@@ -33,6 +33,7 @@ export const Menu = styled.ul`
     flex-direction: row;
     display: flex;
     justify-content: end;
+    align-items: center;
     width: 100%;
   }
   display: ${(props) => (props.isOpen ? "flex" : "none")};

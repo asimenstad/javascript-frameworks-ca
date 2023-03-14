@@ -26,6 +26,7 @@ export const SearchButton = styled.button`
   padding: 0.25rem;
   position: absolute;
   margin-left: -2rem;
+  cursor: pointer;
 `;
 
 export const SearchIcon = styled(HiMagnifyingGlass)`

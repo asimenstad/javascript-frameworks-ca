@@ -16,3 +16,13 @@ export const Div = styled.div`
     font-size: 1rem;
   }
 `;
+
+export const Button = styled.button`
+  background-color: #000;
+  color: #eeeff1;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  margin-left: auto;
+`;

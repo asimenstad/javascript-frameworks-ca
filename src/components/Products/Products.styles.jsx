@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const ProductsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 35px 15px;
+  gap: 40px 20px;
   @media screen and (min-width: 600px) {
     grid-template-columns: repeat(2, 1fr);
   }
