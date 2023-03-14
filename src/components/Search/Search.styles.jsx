@@ -24,12 +24,13 @@ export const SearchButton = styled.button`
   border: none;
   border-radius: 1rem;
   padding: 0.25rem;
-  position: absolute;
-  margin-left: -2rem;
+
   cursor: pointer;
 `;
 
 export const SearchIcon = styled(HiMagnifyingGlass)`
   font-size: 1rem;
-  margin-top: 2px;
+  position: absolute;
+  margin-left: -2rem;
+  margin-top: 0.4rem;
 `;

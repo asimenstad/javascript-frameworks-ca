@@ -8,7 +8,7 @@ export const Main = styled.main`
   max-width: 1200px;
 `;
 
-export const Div = styled.div`
+export const Section = styled.section`
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
