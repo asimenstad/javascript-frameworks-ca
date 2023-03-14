@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./Card.styles";
+import * as S from "./Product.styles";
 
 function Card(props) {
   return (

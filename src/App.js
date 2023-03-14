@@ -1,20 +1,20 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout/Layout.jsx";
-import Checkout from "./pages/Checkout/Checkout.jsx";
-import Product from "./pages/Product/Product.jsx";
-import Home from "./pages/Home/Home.jsx";
-import Contact from "./pages/Contact/Contact.jsx";
+import CheckoutPage from "./pages/CheckoutPage/CheckoutPage.jsx";
+import ProductPage from "./pages/ProductPage/ProductPage";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import ContactPage from "./pages/ContactPage/ContactPage.jsx";
 
 function App() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="products/:id" element={<Product />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="checkout" element={<Checkout />} />
+          <Route index element={<HomePage />} />
+          <Route path="products/:id" element={<ProductPage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="checkout" element={<CheckoutPage />} />
         </Route>
       </Routes>
     </div>

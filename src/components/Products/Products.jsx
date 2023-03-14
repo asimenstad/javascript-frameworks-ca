@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../Card/Card";
+import Card from "../Product/Product";
 import * as S from "./Products.styles";
 import useApi from "../../hooks/useApi";
 

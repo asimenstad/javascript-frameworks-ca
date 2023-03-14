@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import Products from "../../components/Products/Products";
-import * as S from "./Home.styles";
+import * as S from "./HomePage.styles";
 import Search from "../../components/Search/Search";
 
-function Home() {
+function HomePage() {
   const [searchInput, setSearchInput] = useState("");
   function onInputChange(e) {
     e.preventDefault();
     setSearchInput(e.target.value);
   }
-
   return (
     <S.Main>
       <h1>Our Products</h1>
@@ -25,4 +24,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;
