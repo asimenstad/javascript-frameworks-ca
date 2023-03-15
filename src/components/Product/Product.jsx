@@ -9,7 +9,7 @@ function Card(props) {
         <h2>{props.title}</h2>
         <p>{props.price}</p>
       </S.Div>
-      <S.Button>View Product</S.Button>
+      <button>View Product</button>
     </div>
   );
 }

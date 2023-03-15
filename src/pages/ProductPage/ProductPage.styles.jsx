@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Main = styled.main`
-  display: flex;
-  flex-direction: column;
-  margin: auto;
-  padding: 20px;
-  max-width: 1200px;
-`;
-
 export const Breadcrumb = styled.ul`
   display: flex;
   gap: 1rem;
@@ -35,8 +27,6 @@ export const Section = styled.section`
 `;
 
 export const Image = styled.img`
-  width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 0.1rem;
 `;

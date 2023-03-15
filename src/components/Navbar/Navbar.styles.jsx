@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { AiOutlineShop } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 
 export const Nav = styled.nav`
@@ -10,11 +11,6 @@ export const Nav = styled.nav`
   @media screen and (min-width: 600px) {
     flex-direction: row;
   }
-`;
-
-export const StyledNavLink = styled(NavLink)`
-  text-decoration: none;
-  color: #000;
 `;
 
 export const MenuWrapper = styled.div`
@@ -39,12 +35,19 @@ export const Menu = styled.ul`
   display: ${(props) => (props.isOpen ? "flex" : "none")};
 `;
 
-export const MenuItem = styled.li`
-  list-style: none;
-`;
-
 export const HamburgerWrapper = styled.div`
   @media screen and (min-width: 600px) {
     display: none;
   }
+`;
+
+export const Logo = styled(AiOutlineShop)`
+  font-size: 1.5rem;
+`;
+
+export const LogoWrapper = styled(NavLink)`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: ${(props) => props.theme.font.primary};
 `;

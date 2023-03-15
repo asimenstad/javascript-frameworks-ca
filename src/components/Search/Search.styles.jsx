@@ -12,7 +12,7 @@ export const Label = styled.label`
 `;
 
 export const SearchInput = styled.input`
-  background-color: #eeeff1;
+  background-color: ${(props) => props.theme.color.secondary};
   border: none;
   border-radius: 1rem;
   padding: 0.4rem 1rem;
@@ -20,11 +20,10 @@ export const SearchInput = styled.input`
 `;
 
 export const SearchButton = styled.button`
-  background-color: #eeeff1;
+  background-color: ${(props) => props.theme.color.secondary};
   border: none;
   border-radius: 1rem;
   padding: 0.25rem;
-
   cursor: pointer;
 `;
 

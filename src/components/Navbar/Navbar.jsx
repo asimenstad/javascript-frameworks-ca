@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Hamburger from "hamburger-react";
 import * as S from "./Navbar.styles";
 import Cart from "../Cart/Cart";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
@@ -9,23 +10,25 @@ function Navbar() {
   return (
     <S.Nav>
       <S.MenuWrapper>
-        <S.StyledNavLink to="/">Logo</S.StyledNavLink>
+        <S.LogoWrapper to="/">
+          <S.Logo></S.Logo> Market
+        </S.LogoWrapper>
         <S.HamburgerWrapper>
           <Hamburger className="hamburger" toggled={isOpen} toggle={setOpen} size={20}></Hamburger>
         </S.HamburgerWrapper>
       </S.MenuWrapper>
       <S.Menu isOpen={isOpen}>
-        <S.MenuItem>
-          <S.StyledNavLink to="/">Home</S.StyledNavLink>
-        </S.MenuItem>
-        <S.MenuItem>
-          <S.StyledNavLink to="/contact">Contact</S.StyledNavLink>
-        </S.MenuItem>
-        <S.MenuItem>
-          <S.StyledNavLink to="/checkout">
+        <li>
+          <NavLink to="/">Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact">Contact</NavLink>
+        </li>
+        <li>
+          <NavLink to="/checkout">
             <Cart></Cart>
-          </S.StyledNavLink>
-        </S.MenuItem>
+          </NavLink>
+        </li>
       </S.Menu>
     </S.Nav>
   );

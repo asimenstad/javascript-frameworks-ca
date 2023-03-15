@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { AiOutlineShopping } from "react-icons/ai";
 
-export const Icon = styled(HiOutlineShoppingBag)`
+export const Icon = styled(AiOutlineShopping)`
   font-size: 1.5rem;
 `;
 

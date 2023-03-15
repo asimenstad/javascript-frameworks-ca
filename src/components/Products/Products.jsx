@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../Product/Product";
 import * as S from "./Products.styles";
 import useApi from "../../hooks/useApi";
+import { Link } from "react-router-dom";
 
 function Products(props) {
   const { data, isLoading, isError } = useApi("https://api.noroff.dev/api/v1/online-shop");
@@ -20,9 +21,9 @@ function Products(props) {
   return (
     <S.ProductsWrapper>
       {filteredProducts.map((product) => (
-        <S.StyledLink to={product.id} key={product.id}>
+        <Link to={product.id} key={product.id}>
           <Card imageUrl={product.imageUrl} title={product.title} price={product.price}></Card>
-        </S.StyledLink>
+        </Link>
       ))}
     </S.ProductsWrapper>
   );

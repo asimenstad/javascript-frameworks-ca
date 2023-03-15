@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const ProductsWrapper = styled.div`
   display: grid;
@@ -14,9 +13,4 @@ export const ProductsWrapper = styled.div`
   @media screen and (min-width: 1000px) {
     grid-template-columns: repeat(4, 1fr);
   }
-`;
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: #000;
 `;

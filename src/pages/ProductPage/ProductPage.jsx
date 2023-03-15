@@ -17,7 +17,7 @@ function ProductPage() {
   const { title, description, price, discountedPrice, rating, imageUrl, reviews } = data;
   console.log(data);
   return (
-    <S.Main>
+    <main>
       <S.Breadcrumb>
         <li>
           <S.StyledLink to="/">Home</S.StyledLink>
@@ -58,7 +58,7 @@ function ProductPage() {
           <S.Image src={imageUrl} alt={title} />
         </div>
       </S.Section>
-    </S.Main>
+    </main>
   );
 }
 

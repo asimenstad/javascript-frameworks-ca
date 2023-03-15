@@ -10,7 +10,7 @@ function HomePage() {
     setSearchInput(e.target.value);
   }
   return (
-    <S.Main>
+    <main>
       <h1>Our Products</h1>
       <S.Section>
         <Search onInputChange={onInputChange} searchInput={searchInput}></Search>
@@ -20,7 +20,7 @@ function HomePage() {
         </div>
       </S.Section>
       <Products searchInput={searchInput}></Products>
-    </S.Main>
+    </main>
   );
 }
 
