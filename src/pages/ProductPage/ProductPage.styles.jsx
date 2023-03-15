@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Breadcrumb = styled.ul`
@@ -9,11 +8,6 @@ export const Breadcrumb = styled.ul`
   > li {
     list-style: none;
   }
-`;
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: #000;
 `;
 
 export const Section = styled.section`
@@ -29,4 +23,44 @@ export const Section = styled.section`
 export const Image = styled.img`
   aspect-ratio: 4 / 5;
   object-fit: cover;
+`;
+
+export const Div = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+export const DiscountedPrice = styled.p`
+  color: ${(props) => props.theme.color.red};
+`;
+
+export const Price = styled.p`
+  text-decoration: line-through;
+  color: ${(props) => props.theme.color.muted};
+`;
+
+export const Hr = styled.hr`
+  margin-top: 2rem;
+  border: solid 0.5px;
+  color: ${(props) => props.theme.color.muted};
+`;
+
+export const Reviews = styled.div`
+  margin-top: 2rem;
+  > h2 {
+    font-size: 1.2rem;
+  }
+`;
+
+export const Review = styled.div`
+  margin-bottom: 2rem;
+  > * {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+  }
+`;
+
+export const RatingWrapper = styled.div`
+  display: flex;
+  gap: 0.5rem;
 `;

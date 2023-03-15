@@ -1,8 +1,8 @@
 import React from "react";
-import Card from "../Product/Product";
 import * as S from "./Products.styles";
 import useApi from "../../hooks/useApi";
 import { Link } from "react-router-dom";
+import Product from "../Product/Product";
 
 function Products(props) {
   const { data, isLoading, isError } = useApi("https://api.noroff.dev/api/v1/online-shop");
@@ -22,7 +22,11 @@ function Products(props) {
     <S.ProductsWrapper>
       {filteredProducts.map((product) => (
         <Link to={product.id} key={product.id}>
-          <Card imageUrl={product.imageUrl} title={product.title} price={product.price}></Card>
+          <Product
+            imageUrl={product.imageUrl}
+            title={product.title}
+            price={product.price}
+            discountedPrice={product.discountedPrice}></Product>
         </Link>
       ))}
     </S.ProductsWrapper>

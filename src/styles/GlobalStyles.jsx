@@ -4,6 +4,8 @@ const GlobalStyle = createGlobalStyle`
 html{
   --color-primary: #000;
   --color-secondary: #eeeff1;
+  --color-red: #870909;
+  --color-muted: #4f4f4f;
   --font-primary: 'Prata', serif;
   --font-secondary: 'Work Sans', sans-serif;
 }

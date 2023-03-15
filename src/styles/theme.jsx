@@ -4,6 +4,8 @@ const theme = {
   color: {
     primary: "var(--color-primary)",
     secondary: "var(--color-secondary)",
+    red: "var(--color-red)",
+    muted: "var(--color-muted)",
   },
   font: {
     primary: "var(--font-primary)",

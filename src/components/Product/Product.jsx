@@ -1,17 +1,28 @@
 import React from "react";
 import * as S from "./Product.styles";
 
-function Card(props) {
+function Product(props) {
   return (
     <div>
       <S.Image src={props.imageUrl} alt={props.title} />
       <S.Div>
         <h2>{props.title}</h2>
-        <p>{props.price}</p>
+        {props.price === props.discountedPrice ? (
+          <S.PriceWrapper>
+            <p>{props.price} KR</p>
+          </S.PriceWrapper>
+        ) : (
+          <S.PriceWrapper>
+            <S.DiscountedPrice>{props.discountedPrice} KR</S.DiscountedPrice>
+            <S.Price>{props.price} KR</S.Price>
+          </S.PriceWrapper>
+        )}
       </S.Div>
-      <button>View Product</button>
+      <div>
+        <button>View Product</button>
+      </div>
     </div>
   );
 }
 
-export default Card;
+export default Product;

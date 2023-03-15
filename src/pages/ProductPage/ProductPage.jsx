@@ -1,5 +1,6 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Rating from "../../components/Rating/Rating";
 import useApi from "../../hooks/useApi";
 import * as S from "./ProductPage.styles";
 
@@ -20,7 +21,7 @@ function ProductPage() {
     <main>
       <S.Breadcrumb>
         <li>
-          <S.StyledLink to="/">Home</S.StyledLink>
+          <Link to="/">Home</Link>
         </li>
         <li>/</li>
         <li>{title}</li>
@@ -29,30 +30,37 @@ function ProductPage() {
         <div>
           <h1>{title}</h1>
           {price === discountedPrice ? (
-            <p>{price}</p>
+            <S.Div>
+              <p>{price} KR</p>
+            </S.Div>
           ) : (
-            <div>
-              <p>{discountedPrice}</p>
-              <p>{price}</p>
-            </div>
+            <S.Div>
+              <S.DiscountedPrice>{discountedPrice} KR</S.DiscountedPrice>
+              <S.Price>{price} KR</S.Price>
+            </S.Div>
           )}
-          <p>{rating}</p>
           <p>{description}</p>
           <div>
             <button>Add to cart</button>
           </div>
-          <h2>Reviews</h2>
-          {reviews && reviews.length > 0 ? (
-            reviews.map((review) => (
-              <div key={review.id}>
-                <h3>{review.username}</h3>
-                <p>{review.description}</p>
-                <p>{review.rating}</p>
-              </div>
-            ))
-          ) : (
-            <div>No reviews</div>
-          )}
+          <S.Hr></S.Hr>
+          <S.Reviews>
+            <h2>Reviews {reviews && reviews.length > 0 && <span>({reviews.length})</span>}</h2>
+            {reviews && reviews.length > 0 ? (
+              reviews.map((review) => (
+                <S.Review key={review.id}>
+                  <h3>{review.username}</h3>
+                  <p>{review.description}</p>
+                  <S.RatingWrapper>
+                    {review.rating}
+                    <Rating rating={review.rating}></Rating>
+                  </S.RatingWrapper>
+                </S.Review>
+              ))
+            ) : (
+              <div>No reviews</div>
+            )}
+          </S.Reviews>
         </div>
         <div>
           <S.Image src={imageUrl} alt={title} />
