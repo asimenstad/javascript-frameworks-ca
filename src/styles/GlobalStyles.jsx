@@ -41,7 +41,7 @@ button{
   text-transform: uppercase;
   border: none;
   border-radius: 1rem;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 1.5rem;
   cursor: pointer;
   margin-left: auto;
 }

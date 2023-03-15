@@ -30,18 +30,24 @@ function ProductPage() {
         <div>
           <h1>{title}</h1>
           {price === discountedPrice ? (
-            <S.Div>
+            <S.PriceWrapper>
               <p>{price} KR</p>
-            </S.Div>
+            </S.PriceWrapper>
           ) : (
-            <S.Div>
+            <S.PriceWrapper>
               <S.DiscountedPrice>{discountedPrice} KR</S.DiscountedPrice>
               <S.Price>{price} KR</S.Price>
-            </S.Div>
+            </S.PriceWrapper>
+          )}
+          {reviews && reviews.length > 0 && (
+            <S.RatingWrapper>
+              {rating}
+              <Rating rating={rating}></Rating>
+            </S.RatingWrapper>
           )}
           <p>{description}</p>
           <div>
-            <button>Add to cart</button>
+            <button>Add to bag</button>
           </div>
           <S.Hr></S.Hr>
           <S.Reviews>
@@ -53,7 +59,7 @@ function ProductPage() {
                   <p>{review.description}</p>
                   <S.RatingWrapper>
                     {review.rating}
-                    <Rating rating={review.rating}></Rating>
+                    <Rating rating={Math.round(review.rating)}></Rating>
                   </S.RatingWrapper>
                 </S.Review>
               ))

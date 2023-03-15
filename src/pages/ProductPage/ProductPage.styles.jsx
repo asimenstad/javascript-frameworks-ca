@@ -14,7 +14,15 @@ export const Section = styled.section`
   margin-top: 40px;
   display: flex;
   flex-direction: column-reverse;
+  justify-content: flex-end;
   gap: 40px;
+  > div {
+    max-width: 500px;
+    > h1 {
+      margin-bottom: 0;
+    }
+  }
+
   @media screen and (min-width: 800px) {
     flex-direction: row-reverse;
   }
@@ -25,9 +33,10 @@ export const Image = styled.img`
   object-fit: cover;
 `;
 
-export const Div = styled.div`
+export const PriceWrapper = styled.div`
   display: flex;
   gap: 1rem;
+  font-weight: 500;
 `;
 
 export const DiscountedPrice = styled.p`
