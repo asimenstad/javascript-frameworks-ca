@@ -14,17 +14,18 @@ export const Section = styled.section`
   margin-top: 40px;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: flex-end;
   gap: 40px;
   > div {
-    max-width: 500px;
     > h1 {
       margin-bottom: 0;
     }
   }
-
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 750px) {
     flex-direction: row-reverse;
+    justify-content: flex-end;
+    > div {
+      max-width: 500px;
+    }
   }
 `;
 
