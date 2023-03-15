@@ -14,8 +14,8 @@ function ProductPage() {
     return <div>Error</div>;
   }
 
-  const { title, description, price, discountedPrice, imageUrl, reviews } = data;
-
+  const { title, description, price, discountedPrice, rating, imageUrl, reviews } = data;
+  console.log(data);
   return (
     <S.Main>
       <S.Breadcrumb>
@@ -23,20 +23,26 @@ function ProductPage() {
           <S.StyledLink to="/">Home</S.StyledLink>
         </li>
         <li>/</li>
-        <li>
-          <S.StyledLink>{title}</S.StyledLink>
-        </li>
+        <li>{title}</li>
       </S.Breadcrumb>
       <S.Section>
         <div>
           <h1>{title}</h1>
-          <p>{price}</p>
+          {price === discountedPrice ? (
+            <p>{price}</p>
+          ) : (
+            <div>
+              <p>{discountedPrice}</p>
+              <p>{price}</p>
+            </div>
+          )}
+          <p>{rating}</p>
           <p>{description}</p>
           <div>
             <button>Add to cart</button>
           </div>
           <h2>Reviews</h2>
-          {reviews.length < 0 ? (
+          {reviews && reviews.length > 0 ? (
             reviews.map((review) => (
               <div key={review.id}>
                 <h3>{review.username}</h3>

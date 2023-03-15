@@ -36,4 +36,7 @@ export const Section = styled.section`
 
 export const Image = styled.img`
   width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 0.1rem;
 `;
