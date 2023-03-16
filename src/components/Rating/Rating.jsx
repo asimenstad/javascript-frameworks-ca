@@ -3,7 +3,7 @@ import { AiFillStar, AiOutlineStar } from "react-icons/ai";
 
 function Rating(props) {
   const totalStars = 5;
-  const filledStars = props.rating;
+  const filledStars = Math.floor(props.rating);
 
   return (
     <div>

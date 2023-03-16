@@ -63,7 +63,7 @@ function ProductPage() {
                   <p>{review.description}</p>
                   <S.RatingWrapper>
                     {review.rating}
-                    <Rating rating={Math.round(review.rating)}></Rating>
+                    <Rating rating={review.rating}></Rating>
                   </S.RatingWrapper>
                 </S.Review>
               ))
