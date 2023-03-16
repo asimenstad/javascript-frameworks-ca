@@ -8,7 +8,7 @@ function Rating(props) {
   return (
     <div>
       {[...new Array(totalStars)].map((arr, index) => {
-        return index < filledStars ? <AiFillStar /> : <AiOutlineStar />;
+        return index < filledStars ? <AiFillStar key={index} /> : <AiOutlineStar key={index} />;
       })}
     </div>
   );

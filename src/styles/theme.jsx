@@ -2,10 +2,12 @@ import { ThemeProvider } from "styled-components";
 
 const theme = {
   color: {
-    primary: "var(--color-primary)",
-    secondary: "var(--color-secondary)",
+    black: "var(--color-black)",
+    white: "var(--color-white)",
+    lightGray: "var(--color-lightGray)",
     red: "var(--color-red)",
     muted: "var(--color-muted)",
+    pink: "var(--color-pink)",
   },
   font: {
     primary: "var(--font-primary)",

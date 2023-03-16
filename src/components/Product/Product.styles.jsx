@@ -30,4 +30,5 @@ export const DiscountedPrice = styled.p`
 
 export const Price = styled.p`
   text-decoration: line-through;
+  color: ${(props) => props.theme.color.muted};
 `;

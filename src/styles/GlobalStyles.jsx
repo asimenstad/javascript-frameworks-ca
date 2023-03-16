@@ -2,10 +2,12 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 html{
-  --color-primary: #000;
-  --color-secondary: #eeeff1;
-  --color-red: #870909;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-lightGray: #eeeff1;
+  --color-red: #D12121;
   --color-muted: #4f4f4f;
+  --color-pink: #CC3B89;
   --font-primary: 'Prata', serif;
   --font-secondary: 'Work Sans', sans-serif;
 }
@@ -35,8 +37,8 @@ img{
   border-radius: 0.1rem;
 }
 button{
-  background-color: var(--color-primary);
-  color: var(--color-secondary);
+  background-color: var(--color-black);
+  color: var(--color-white);
   font-family: var(--font-secondary);
   text-transform: uppercase;
   border: none;
@@ -44,6 +46,10 @@ button{
   padding: 0.4rem 1.5rem;
   cursor: pointer;
   margin-left: auto;
+  transition: 0.15s ease-in-out;
+  :hover{
+    background-color: var(--color-pink);
+  }
 }
 `;
 

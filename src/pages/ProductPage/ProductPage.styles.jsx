@@ -29,9 +29,10 @@ export const Section = styled.section`
   }
 `;
 
-export const Image = styled.img`
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+export const Div = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const PriceWrapper = styled.div`
@@ -73,4 +74,9 @@ export const Review = styled.div`
 export const RatingWrapper = styled.div`
   display: flex;
   gap: 0.5rem;
+`;
+
+export const Image = styled.img`
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 `;

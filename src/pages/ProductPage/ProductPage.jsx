@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import Discount from "../../components/Discount/Discount";
 import Rating from "../../components/Rating/Rating";
 import useApi from "../../hooks/useApi";
 import * as S from "./ProductPage.styles";
@@ -34,10 +35,13 @@ function ProductPage() {
               <p>{price} KR</p>
             </S.PriceWrapper>
           ) : (
-            <S.PriceWrapper>
-              <S.DiscountedPrice>{discountedPrice} KR</S.DiscountedPrice>
-              <S.Price>{price} KR</S.Price>
-            </S.PriceWrapper>
+            <S.Div>
+              <S.PriceWrapper>
+                <S.DiscountedPrice>{discountedPrice} KR</S.DiscountedPrice>
+                <S.Price>{price} KR</S.Price>
+              </S.PriceWrapper>
+              <Discount price={price} discountedPrice={discountedPrice}></Discount>
+            </S.Div>
           )}
           {reviews && reviews.length > 0 && (
             <S.RatingWrapper>
