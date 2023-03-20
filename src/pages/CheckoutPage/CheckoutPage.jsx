@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./CheckoutPage.styles";
+import * as S from "./CheckoutPage.styles.jsx";
 
 function CheckoutPage() {
   return (
@@ -35,7 +35,7 @@ function CheckoutPage() {
               <span>Helthjem Ekspress</span>
               <span>49 KR</span>
             </label>
-            <input type="radio" name="delivery" value="express" id="express" checked />
+            <input type="radio" name="delivery" value="express" id="express" defaultChecked />
           </div>
           <div>
             <label htmlFor="standard">
@@ -52,7 +52,7 @@ function CheckoutPage() {
               <span>Klarna</span>
               <span>Klarna logo</span>
             </label>
-            <input type="radio" name="payment" value="klarna" id="klarna" checked />
+            <input type="radio" name="payment" value="klarna" id="klarna" defaultChecked />
           </div>
           <div>
             <label htmlFor="vipps">
