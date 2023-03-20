@@ -42,7 +42,7 @@ export const HamburgerWrapper = styled.div`
 `;
 
 export const Logo = styled(AiOutlineShop)`
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 `;
 
 export const LogoWrapper = styled(NavLink)`

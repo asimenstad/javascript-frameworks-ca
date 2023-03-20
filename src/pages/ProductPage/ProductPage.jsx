@@ -4,6 +4,7 @@ import Discount from "../../components/Discount/Discount";
 import Rating from "../../components/Rating/Rating";
 import useApi from "../../hooks/useApi";
 import * as S from "./ProductPage.styles";
+import AddToCartButton from "../../components/AddToCartButton/AddToCartButton";
 
 function ProductPage() {
   let { id } = useParams();
@@ -17,7 +18,7 @@ function ProductPage() {
   }
 
   const { title, description, price, discountedPrice, rating, imageUrl, reviews } = data;
-  console.log(data);
+
   return (
     <main>
       <S.Breadcrumb>
@@ -51,7 +52,7 @@ function ProductPage() {
           )}
           <p>{description}</p>
           <div>
-            <button>Add to bag</button>
+            <AddToCartButton product={data}></AddToCartButton>
           </div>
           <S.Hr></S.Hr>
           <S.Reviews>

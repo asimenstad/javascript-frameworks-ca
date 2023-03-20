@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Image = styled.img`
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  position: relative;
 `;
 
 export const Div = styled.div`

@@ -9,7 +9,7 @@ function Discount(props) {
 
   return (
     <div>
-      <S.P>{percentage.toFixed()}% </S.P>
+      <S.Discount>{percentage.toFixed()}% </S.Discount>
     </div>
   );
 }

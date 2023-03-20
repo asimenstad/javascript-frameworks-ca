@@ -12,23 +12,16 @@ export const Label = styled.label`
 `;
 
 export const SearchInput = styled.input`
-  background-color: ${(props) => props.theme.color.secondary};
+  background-color: ${(props) => props.theme.color.lightGray};
   border: none;
   border-radius: 1rem;
   padding: 0.4rem 1rem;
   position: relative;
 `;
 
-export const SearchButton = styled.button`
-  background-color: ${(props) => props.theme.color.secondary};
-  border: none;
-  border-radius: 1rem;
-  padding: 0.25rem;
-  cursor: pointer;
-`;
-
 export const SearchIcon = styled(HiMagnifyingGlass)`
   font-size: 1rem;
+  color: ${(props) => props.theme.color.muted};
   position: absolute;
   margin-left: -2rem;
   margin-top: 0.4rem;

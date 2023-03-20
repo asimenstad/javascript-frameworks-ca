@@ -51,6 +51,12 @@ button{
     background-color: var(--color-pink);
   }
 }
+input{
+  border: none;
+  border-radius: 0.1rem;
+  padding: 0.4rem;
+}
+
 `;
 
 export default GlobalStyle;

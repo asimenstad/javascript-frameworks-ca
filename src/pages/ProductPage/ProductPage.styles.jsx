@@ -17,7 +17,7 @@ export const Section = styled.section`
   gap: 40px;
   > div {
     > h1 {
-      margin-bottom: 0;
+      margin: 0;
     }
   }
   @media screen and (min-width: 750px) {
