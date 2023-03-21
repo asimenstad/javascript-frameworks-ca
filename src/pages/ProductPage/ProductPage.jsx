@@ -3,12 +3,18 @@ import { Link, useParams } from "react-router-dom";
 import Discount from "../../components/Discount/Discount";
 import Rating from "../../components/Rating/Rating";
 import useApi from "../../hooks/useApi";
+import { useStore } from "../../hooks/useStore";
 import * as S from "./ProductPage.styles";
-import AddToCartButton from "../../components/AddToCartButton/AddToCartButton";
 
 function ProductPage() {
   let { id } = useParams();
   const { data, isLoading, isError } = useApi(`https://api.noroff.dev/api/v1/online-shop/${id}`);
+  const { title, description, price, discountedPrice, rating, imageUrl, reviews } = data;
+
+  const addToCart = useStore((state) => state.addToCart);
+  function onAddToCart() {
+    addToCart(data);
+  }
 
   if (isLoading) {
     return <div>Loading</div>;
@@ -16,8 +22,6 @@ function ProductPage() {
   if (isError) {
     return <div>Error</div>;
   }
-
-  const { title, description, price, discountedPrice, rating, imageUrl, reviews } = data;
 
   return (
     <main>
@@ -52,7 +56,7 @@ function ProductPage() {
           )}
           <p>{description}</p>
           <div>
-            <AddToCartButton product={data}></AddToCartButton>
+            <button onClick={onAddToCart}>Add to cart</button>
           </div>
           <S.Hr></S.Hr>
           <S.Reviews>
