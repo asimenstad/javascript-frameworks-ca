@@ -4,6 +4,7 @@ import Discount from "../../components/Discount/Discount";
 import Rating from "../../components/Rating/Rating";
 import useApi from "../../hooks/useApi";
 import { useStore } from "../../hooks/useStore";
+import { shallow } from "zustand/shallow";
 import * as S from "./ProductPage.styles";
 
 function ProductPage() {
@@ -11,9 +12,17 @@ function ProductPage() {
   const { data, isLoading, isError } = useApi(`https://api.noroff.dev/api/v1/online-shop/${id}`);
   const { title, description, price, discountedPrice, rating, imageUrl, reviews } = data;
 
-  const addToCart = useStore((state) => state.addToCart);
+  const { addToCart, setTotal, clearCart } = useStore(
+    (state) => ({
+      addToCart: state.addToCart,
+      setTotal: state.setTotal,
+      clearCart: state.clearCart,
+    }),
+    shallow
+  );
   function onAddToCart() {
     addToCart(data);
+    setTotal(data.discountedPrice);
   }
 
   if (isLoading) {

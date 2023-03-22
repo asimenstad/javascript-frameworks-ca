@@ -4,15 +4,18 @@ import { shallow } from "zustand/shallow";
 import * as S from "./CheckoutPage.styles.jsx";
 
 function CheckoutPage() {
-  const { cart, removeFromCart, clearCart } = useStore(
+  const { cart, total, removeFromCart, clearCart } = useStore(
     (state) => ({
       cart: state.cart,
+      total: state.total,
       removeFromCart: state.removeFromCart,
       clearCart: state.clearCart,
     }),
     shallow
   );
+
   console.log(cart);
+
   return (
     <main>
       <h1>Checkout</h1>
@@ -20,27 +23,27 @@ function CheckoutPage() {
         <div>
           <h2>Your items</h2>
           <S.CartItems>
-            {cart.map(({ product, quantity }) => (
-              <S.CartItem key={product.id}>
+            {cart.map(({ id, quantity }) => (
+              <S.CartItem key={id.id}>
                 <S.CartItemInfo>
-                  <S.CartItemImg src={product.imageUrl} alt={product.title} />
+                  <S.CartItemImg src={id.imageUrl} alt={id.title} />
                   <div>
-                    <h3>{product.title}</h3>
-                    {product.price === product.discountedPrice ? (
+                    <h3>{id.title}</h3>
+                    {id.price === id.discountedPrice ? (
                       <div>
-                        <p>{product.price} KR</p>
+                        <p>{id.price} KR</p>
                       </div>
                     ) : (
                       <div>
-                        <p>{product.discountedPrice} KR</p>
-                        <p>{product.price} KR</p>
+                        <p>{id.discountedPrice} KR</p>
+                        <p>{id.price} KR</p>
                       </div>
                     )}
                     <p>Quantity: {quantity}</p>
                   </div>
                 </S.CartItemInfo>
                 <div>
-                  <S.RemoveItemButton onClick={removeFromCart}>Remove item</S.RemoveItemButton>
+                  <S.RemoveItemButton>Remove item</S.RemoveItemButton>
                 </div>
               </S.CartItem>
             ))}
@@ -110,7 +113,8 @@ function CheckoutPage() {
           </S.RadioDiv>
           <div>
             <h2>Summary</h2>
-            <button>Checkout </button>
+            <div>Total {total} KR</div>
+            <button>Checkout order</button>
           </div>
         </S.Form>
       </S.CartWrapper>
