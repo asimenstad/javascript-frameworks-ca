@@ -20,7 +20,7 @@ function CheckoutPage() {
         <div>
           <h2>Your items</h2>
           <S.CartItems>
-            {cart.map((product) => (
+            {cart.map(({ product, quantity }) => (
               <S.CartItem key={product.id}>
                 <S.CartItemInfo>
                   <S.CartItemImg src={product.imageUrl} alt={product.title} />
@@ -36,6 +36,7 @@ function CheckoutPage() {
                         <p>{product.price} KR</p>
                       </div>
                     )}
+                    <p>Quantity: {quantity}</p>
                   </div>
                 </S.CartItemInfo>
                 <div>

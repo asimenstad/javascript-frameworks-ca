@@ -7,10 +7,8 @@ export const useStore = create(
       (set) => ({
         cart: [],
         total: 0,
-        quantity: 0,
-        addToCart: (product) => set((state) => ({ cart: [...state.cart, product] })),
-        removeFromCart: (productId) =>
-          set((state) => ({ cart: state.cart.filter((product) => product.id !== productId) })),
+        addToCart: (product) => set((state) => ({ cart: [...state.cart, { product, quantity: 1 }] })),
+        removeFromCart: (product) => set((state) => ({ cart: [...state.cart, { product, quantity: 1 }] })),
         clearCart: () => set({ cart: [] }),
       }),
       {
