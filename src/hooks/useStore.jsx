@@ -27,9 +27,23 @@ const useStore = create(
           }),
         setTotal: (price) => set((state) => ({ total: state.total + parseInt(price) })),
         removeFromCart: (id) =>
-          set((state) => ({
-            cart: state.cart.filter((product) => product.id !== id),
-          })),
+          set((state) => {
+            const isPresent = state.cart.findIndex((product) => product.id === id);
+            if (isPresent === -1) {
+              return {
+                ...state,
+              };
+            }
+            const updatedCart = state.cart
+              .map((product) =>
+                product.id === id ? { ...product, quantity: Math.max(product.quantity - 1, 0) } : product
+              )
+              .filter((product) => product.quantity);
+            return {
+              ...state,
+              cart: updatedCart,
+            };
+          }),
         clearCart: () => set({ cart: [], total: 0 }),
       }),
       {

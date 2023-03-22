@@ -4,17 +4,16 @@ import { shallow } from "zustand/shallow";
 import * as S from "./CheckoutPage.styles.jsx";
 
 function CheckoutPage() {
-  const { cart, total, removeFromCart, clearCart } = useStore(
+  const { cart, total, addToCart, removeFromCart, clearCart } = useStore(
     (state) => ({
       cart: state.cart,
       total: state.total,
+      addToCart: state.addToCart,
       removeFromCart: state.removeFromCart,
       clearCart: state.clearCart,
     }),
     shallow
   );
-
-  console.log(cart);
 
   return (
     <main>
@@ -39,16 +38,16 @@ function CheckoutPage() {
                         <p>{id.price} KR</p>
                       </div>
                     )}
-                    <p>Quantity: {quantity}</p>
                   </div>
                 </S.CartItemInfo>
                 <div>
-                  <S.RemoveItemButton>Remove item</S.RemoveItemButton>
+                  <button onClick={() => addToCart(id)}>+</button>
+                  <p>{quantity}</p>
+                  <button onClick={() => removeFromCart(id)}>-</button>
                 </div>
               </S.CartItem>
             ))}
           </S.CartItems>
-          <button onClick={clearCart}>Clear cart</button>
         </div>
         <S.Form>
           <S.DeliveryInfo>
