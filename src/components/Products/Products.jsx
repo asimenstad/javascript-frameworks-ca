@@ -1,8 +1,8 @@
 import React from "react";
 import * as S from "./Products.styles";
-import useApi from "../../hooks/useApi";
+import useApi from "../../hooks/useApi.jsx";
 import { Link } from "react-router-dom";
-import Product from "../Product/Product";
+import Product from "../Product/Product.jsx";
 
 function Products(props) {
   const { data, isLoading, isError } = useApi("https://api.noroff.dev/api/v1/online-shop");

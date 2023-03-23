@@ -1,6 +1,6 @@
 import React from "react";
-import { useStore } from "../../hooks/useStore";
-import * as S from "./Cart.styles";
+import { useStore } from "../../hooks/useStore.jsx";
+import * as S from "./Cart.styles.jsx";
 
 function Cart() {
   const cart = useStore((state) => state.cart);

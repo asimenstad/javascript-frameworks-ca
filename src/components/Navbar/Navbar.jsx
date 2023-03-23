@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Hamburger from "hamburger-react";
-import * as S from "./Navbar.styles";
-import Cart from "../Cart/Cart";
+import * as S from "./Navbar.styles.jsx";
+import Cart from "../Cart/Cart.jsx";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {

@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./Discount.styles";
+import * as S from "./Discount.styles.jsx";
 
 function Discount(props) {
   const price = props.price;

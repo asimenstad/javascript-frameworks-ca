@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./CheckoutSuccessPage.styles";
+import * as S from "./CheckoutSuccessPage.styles.jsx";
 
 function CheckoutSuccessPage() {
   return (

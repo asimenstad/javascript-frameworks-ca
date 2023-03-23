@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./Search.styles";
+import * as S from "./Search.styles.jsx";
 
 function Search(props) {
   return (

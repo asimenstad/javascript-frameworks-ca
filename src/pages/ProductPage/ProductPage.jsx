@@ -1,10 +1,10 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import Discount from "../../components/Discount/Discount";
-import Rating from "../../components/Rating/Rating";
-import useApi from "../../hooks/useApi";
-import { useStore } from "../../hooks/useStore";
-import * as S from "./ProductPage.styles";
+import Discount from "../../components/Discount/Discount.jsx";
+import Rating from "../../components/Rating/Rating.jsx";
+import useApi from "../../hooks/useApi.jsx";
+import { useStore } from "../../hooks/useStore.jsx";
+import * as S from "./ProductPage.styles.jsx";
 
 function ProductPage() {
   let { id } = useParams();

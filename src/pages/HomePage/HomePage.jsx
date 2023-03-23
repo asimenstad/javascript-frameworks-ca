@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Products from "../../components/Products/Products";
-import * as S from "./HomePage.styles";
-import Search from "../../components/Search/Search";
+import Products from "../../components/Products/Products.jsx";
+import * as S from "./HomePage.styles.jsx";
+import Search from "../../components/Search/Search.jsx";
 
 function HomePage() {
   const [searchInput, setSearchInput] = useState("");
