@@ -20,7 +20,7 @@ export const Section = styled.section`
       margin: 0;
     }
   }
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 800px) {
     flex-direction: row-reverse;
     justify-content: flex-end;
     > div {

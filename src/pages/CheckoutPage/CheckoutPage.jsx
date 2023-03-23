@@ -2,6 +2,7 @@ import React from "react";
 import { useStore } from "../../hooks/useStore.jsx";
 import { shallow } from "zustand/shallow";
 import * as S from "./CheckoutPage.styles.jsx";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutPage() {
   const { cart, addToCart, removeFromCart, clearCart } = useStore(
@@ -13,6 +14,18 @@ function CheckoutPage() {
     }),
     shallow
   );
+
+  const totalEach = cart.map(({ id, quantity }) => {
+    return id.discountedPrice * quantity;
+  });
+  const total = totalEach.reduce((a, b) => a + b, 0);
+
+  const navigate = useNavigate();
+  const submit = (e) => {
+    e.preventDefault();
+    clearCart();
+    navigate("/checkout-success");
+  };
 
   return (
     <main>
@@ -98,30 +111,34 @@ function CheckoutPage() {
             <div>
               <label htmlFor="klarna">
                 <span>Klarna</span>
-                <span>Klarna logo</span>
               </label>
               <input type="radio" name="payment" value="klarna" id="klarna" defaultChecked />
             </div>
             <div>
               <label htmlFor="vipps">
                 <span>Vipps</span>
-                <span>Vipps logo</span>
               </label>
               <input type="radio" name="payment" value="vipps" id="vipps" />
             </div>
             <div>
               <label htmlFor="visa">
                 <span>Visa</span>
-                <span>Visa logo</span>
               </label>
               <input type="radio" name="payment" value="visa" id="visa" />
             </div>
           </S.RadioDiv>
-          <div>
+          <S.Summary>
             <h2>Summary</h2>
-            <div>Total KR</div>
-            <button>Checkout order</button>
-          </div>
+            <div>
+              <span>Delivery</span>
+              <span> KR</span>
+            </div>
+            <div>
+              <span>Total</span>
+              <span>{total.toFixed(2)} KR</span>
+            </div>
+            <button onClick={submit}>Complete order</button>
+          </S.Summary>
         </S.Form>
       </S.CartWrapper>
     </main>

@@ -31,6 +31,23 @@ export const Form = styled.form`
   }
 `;
 
+export const EmptyCart = styled.div`
+  margin: auto;
+  text-align: center;
+`;
+
+export const BackToShopLink = styled(Link)`
+  background-color: ${(props) => props.theme.color.black};
+  color: ${(props) => props.theme.color.white};
+  border-radius: 1rem;
+  padding: 0.4rem 1.5rem;
+  transition: 0.15s ease-in-out;
+  text-transform: uppercase;
+  :hover {
+    background-color: ${(props) => props.theme.color.pink};
+  }
+`;
+
 export const CartItems = styled.div`
   display: flex;
   flex-direction: column;
@@ -134,19 +151,12 @@ export const RadioDiv = styled.div`
   }
 `;
 
-export const EmptyCart = styled.div`
-  margin: auto;
-  text-align: center;
-`;
-
-export const BackToShopLink = styled(Link)`
-  background-color: ${(props) => props.theme.color.black};
-  color: ${(props) => props.theme.color.white};
-  border-radius: 1rem;
-  padding: 0.4rem 1.5rem;
-  transition: 0.15s ease-in-out;
-  text-transform: uppercase;
-  :hover {
-    background-color: ${(props) => props.theme.color.pink};
+export const Summary = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  > div {
+    display: flex;
+    justify-content: space-between;
   }
 `;
