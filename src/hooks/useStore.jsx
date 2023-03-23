@@ -6,7 +6,6 @@ const useStore = create(
     persist(
       (set) => ({
         cart: [],
-        total: 0,
         addToCart: (id) =>
           set((state) => {
             const isPresent = state.cart.find((product) => product.id === id);
@@ -25,7 +24,6 @@ const useStore = create(
               cart: updatedCart,
             };
           }),
-        setTotal: (price) => set((state) => ({ total: state.total + parseInt(price) })),
         removeFromCart: (id) =>
           set((state) => {
             const isPresent = state.cart.findIndex((product) => product.id === id);
@@ -44,7 +42,7 @@ const useStore = create(
               cart: updatedCart,
             };
           }),
-        clearCart: () => set({ cart: [], total: 0 }),
+        clearCart: () => set({ cart: [] }),
       }),
       {
         name: "cart",

@@ -4,10 +4,9 @@ import { shallow } from "zustand/shallow";
 import * as S from "./CheckoutPage.styles.jsx";
 
 function CheckoutPage() {
-  const { cart, total, addToCart, removeFromCart, clearCart } = useStore(
+  const { cart, addToCart, removeFromCart, clearCart } = useStore(
     (state) => ({
       cart: state.cart,
-      total: state.total,
       addToCart: state.addToCart,
       removeFromCart: state.removeFromCart,
       clearCart: state.clearCart,
@@ -20,8 +19,14 @@ function CheckoutPage() {
       <h1>Checkout</h1>
       <S.CartWrapper>
         <div>
-          <h2>Your items</h2>
+          {cart.length > 0 && <h2>Your items</h2>}
           <S.CartItems>
+            {cart.length === 0 && (
+              <S.EmptyCart>
+                <p>Your bag is empty</p>
+                <S.BackToShopLink to="/">Back to shop</S.BackToShopLink>
+              </S.EmptyCart>
+            )}
             {cart.map(({ id, quantity }) => (
               <S.CartItem key={id.id}>
                 <S.CartItemInfo>
@@ -29,22 +34,24 @@ function CheckoutPage() {
                   <div>
                     <h3>{id.title}</h3>
                     {id.price === id.discountedPrice ? (
-                      <div>
-                        <p>{id.price} KR</p>
-                      </div>
+                      <p>{(id.price * quantity).toFixed(2)} KR</p>
                     ) : (
                       <div>
-                        <p>{id.discountedPrice} KR</p>
-                        <p>{id.price} KR</p>
+                        <S.DiscountedPrice>{(id.discountedPrice * quantity).toFixed(2)} KR</S.DiscountedPrice>
+                        <S.Price>{(id.price * quantity).toFixed(2)} KR</S.Price>
                       </div>
                     )}
                   </div>
                 </S.CartItemInfo>
-                <div>
-                  <button onClick={() => addToCart(id)}>+</button>
+                <S.Counter>
+                  <button onClick={() => removeFromCart(id)}>
+                    <S.MinusButton></S.MinusButton>
+                  </button>
                   <p>{quantity}</p>
-                  <button onClick={() => removeFromCart(id)}>-</button>
-                </div>
+                  <button onClick={() => addToCart(id)}>
+                    <S.PlusButton></S.PlusButton>
+                  </button>
+                </S.Counter>
               </S.CartItem>
             ))}
           </S.CartItems>
@@ -112,7 +119,7 @@ function CheckoutPage() {
           </S.RadioDiv>
           <div>
             <h2>Summary</h2>
-            <div>Total {total} KR</div>
+            <div>Total KR</div>
             <button>Checkout order</button>
           </div>
         </S.Form>

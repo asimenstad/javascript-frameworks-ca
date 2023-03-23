@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export const CartWrapper = styled.div`
   display: grid;
@@ -51,19 +53,57 @@ export const CartItemImg = styled.img`
 export const CartItemInfo = styled.div`
   display: flex;
   gap: 10px;
-  > h3 {
-    font-size: 1rem;
+  > div {
+    > h3 {
+      font-size: 1rem;
+      font-weight: 500;
+    }
   }
 `;
 
-export const RemoveItemButton = styled.button`
-  padding: 0;
+export const DiscountedPrice = styled.p`
+  margin: 0;
+  color: ${(props) => props.theme.color.red};
+`;
+
+export const Price = styled.p`
+  margin: 0;
+  text-decoration: line-through;
   color: ${(props) => props.theme.color.muted};
-  font-size: 0.8rem;
-  background-color: transparent;
+`;
+
+export const Counter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: ${(props) => props.theme.color.muted};
+  > button {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    background-color: ${(props) => props.theme.color.lightGray};
+    :hover {
+      background-color: ${(props) => props.theme.color.lightGray};
+    }
+  }
+`;
+
+export const MinusButton = styled(AiOutlineMinusCircle)`
+  color: ${(props) => props.theme.color.muted};
+  font-size: 1.5rem;
+  transition: 0.15s ease-in-out;
   :hover {
-    background-color: transparent;
-    color: ${(props) => props.theme.color.black};
+    color: ${(props) => props.theme.color.pink};
+  }
+`;
+
+export const PlusButton = styled(AiOutlinePlusCircle)`
+  color: ${(props) => props.theme.color.muted};
+  font-size: 1.5rem;
+  transition: 0.15s ease-in-out;
+  :hover {
+    color: ${(props) => props.theme.color.pink};
   }
 `;
 
@@ -91,5 +131,22 @@ export const RadioDiv = styled.div`
       display: flex;
       justify-content: space-between;
     }
+  }
+`;
+
+export const EmptyCart = styled.div`
+  margin: auto;
+  text-align: center;
+`;
+
+export const BackToShopLink = styled(Link)`
+  background-color: ${(props) => props.theme.color.black};
+  color: ${(props) => props.theme.color.white};
+  border-radius: 1rem;
+  padding: 0.4rem 1.5rem;
+  transition: 0.15s ease-in-out;
+  text-transform: uppercase;
+  :hover {
+    background-color: ${(props) => props.theme.color.pink};
   }
 `;
