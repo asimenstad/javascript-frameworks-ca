@@ -32,7 +32,6 @@ function CheckoutPage() {
       <h1>Checkout</h1>
       <S.CartWrapper>
         <div>
-          {cart.length > 0 && <h2>Your items</h2>}
           <S.CartItems>
             {cart.length === 0 && (
               <S.EmptyCart>
@@ -40,6 +39,7 @@ function CheckoutPage() {
                 <S.BackToShopLink to="/">Back to shop</S.BackToShopLink>
               </S.EmptyCart>
             )}
+            {cart.length > 0 && <h2>Your items</h2>}
             {cart.map(({ id, quantity }) => (
               <S.CartItem key={id.id}>
                 <S.CartItemInfo>

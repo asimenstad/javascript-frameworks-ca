@@ -52,6 +52,10 @@ export const CartItems = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  > h2 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
 `;
 
 export const CartItem = styled.div`
