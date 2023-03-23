@@ -30,7 +30,8 @@ a{
   color: #000;
 }
 h1, h2{
-  font-family: var(--font-primary)
+  font-family: var(--font-primary);
+  font-weight: 400;
 }
 img{
   width: 100%;

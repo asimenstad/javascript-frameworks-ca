@@ -14,6 +14,7 @@ export const Section = styled.section`
   margin-top: 40px;
   display: flex;
   flex-direction: column-reverse;
+  justify-content: center;
   gap: 40px;
   > div {
     > h1 {
@@ -22,7 +23,6 @@ export const Section = styled.section`
   }
   @media screen and (min-width: 800px) {
     flex-direction: row-reverse;
-    justify-content: flex-end;
     > div {
       max-width: 500px;
     }

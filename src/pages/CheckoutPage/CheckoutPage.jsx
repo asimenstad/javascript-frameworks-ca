@@ -36,7 +36,7 @@ function CheckoutPage() {
           <S.CartItems>
             {cart.length === 0 && (
               <S.EmptyCart>
-                <p>Your bag is empty</p>
+                <p>Your cart is empty</p>
                 <S.BackToShopLink to="/">Back to shop</S.BackToShopLink>
               </S.EmptyCart>
             )}
