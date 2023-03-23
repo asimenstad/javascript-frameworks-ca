@@ -5,8 +5,12 @@ function Footer() {
   return (
     <S.Footer>
       <S.FooterWrapper>
-        <div>Logo etc</div>
-        <div>Social media</div>
+        <S.LogoWrapper>&copy; 2023 Market</S.LogoWrapper>
+        <S.Socials>
+          <S.Instagram></S.Instagram>
+          <S.Facebook></S.Facebook>
+          <S.Twitter></S.Twitter>
+        </S.Socials>
       </S.FooterWrapper>
     </S.Footer>
   );
