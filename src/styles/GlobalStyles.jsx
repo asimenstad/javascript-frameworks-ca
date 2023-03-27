@@ -52,7 +52,7 @@ button{
     background-color: var(--color-pink);
   }
 }
-input{
+input, textarea{
   border: none;
   border-radius: 0.1rem;
   padding: 0.4rem;

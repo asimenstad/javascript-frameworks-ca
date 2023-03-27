@@ -21,11 +21,11 @@ function CheckoutPage() {
   const total = totalEach.reduce((a, b) => a + b, 0);
 
   const navigate = useNavigate();
-  const submit = (e) => {
+  function onSubmit(e) {
     e.preventDefault();
     clearCart();
     navigate("/checkout-success");
-  };
+  }
 
   return (
     <main>
@@ -69,7 +69,7 @@ function CheckoutPage() {
             ))}
           </S.CartItems>
         </div>
-        <S.Form>
+        <S.Form onSubmit={onSubmit}>
           <S.DeliveryInfo>
             <h2>Delivery information</h2>
             <div>
@@ -137,7 +137,7 @@ function CheckoutPage() {
               <span>Total</span>
               <span>{total.toFixed(2)} KR</span>
             </div>
-            <button onClick={submit}>Complete order</button>
+            <button>Complete order</button>
           </S.Summary>
         </S.Form>
       </S.CartWrapper>
