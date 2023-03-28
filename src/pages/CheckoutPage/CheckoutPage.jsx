@@ -15,8 +15,8 @@ function CheckoutPage() {
     shallow
   );
 
-  const totalEach = cart.map(({ id, quantity }) => {
-    return id.discountedPrice * quantity;
+  const totalEach = cart.map(({ data, quantity }) => {
+    return data.discountedPrice * quantity;
   });
   const total = totalEach.reduce((a, b) => a + b, 0);
 
@@ -40,28 +40,28 @@ function CheckoutPage() {
               </S.EmptyCart>
             )}
             {cart.length > 0 && <h2>Your items</h2>}
-            {cart.map(({ id, quantity }) => (
-              <S.CartItem key={id.id}>
+            {cart.map(({ data, quantity }) => (
+              <S.CartItem key={data.id}>
                 <S.CartItemInfo>
-                  <S.CartItemImg src={id.imageUrl} alt={id.title} />
+                  <S.CartItemImg src={data.imageUrl} alt={data.title} />
                   <div>
-                    <h3>{id.title}</h3>
-                    {id.price === id.discountedPrice ? (
-                      <p>{(id.price * quantity).toFixed(2)} KR</p>
+                    <h3>{data.title}</h3>
+                    {data.price === data.discountedPrice ? (
+                      <p>{(data.price * quantity).toFixed(2)} KR</p>
                     ) : (
                       <div>
-                        <S.DiscountedPrice>{(id.discountedPrice * quantity).toFixed(2)} KR</S.DiscountedPrice>
-                        <S.Price>{(id.price * quantity).toFixed(2)} KR</S.Price>
+                        <S.DiscountedPrice>{(data.discountedPrice * quantity).toFixed(2)} KR</S.DiscountedPrice>
+                        <S.Price>{(data.price * quantity).toFixed(2)} KR</S.Price>
                       </div>
                     )}
                   </div>
                 </S.CartItemInfo>
                 <S.Counter>
-                  <button onClick={() => removeFromCart(id)}>
+                  <button onClick={() => removeFromCart(data)}>
                     <S.MinusButton></S.MinusButton>
                   </button>
                   <p>{quantity}</p>
-                  <button onClick={() => addToCart(id)}>
+                  <button onClick={() => addToCart(data)}>
                     <S.PlusButton></S.PlusButton>
                   </button>
                 </S.Counter>

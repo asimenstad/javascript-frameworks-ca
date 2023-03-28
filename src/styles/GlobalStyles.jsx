@@ -6,7 +6,7 @@ html{
   --color-white: #fff;
   --color-lightGray: #eeeff1;
   --color-red: #D12121;
-  --color-muted: #4f4f4f;
+  --color-muted: #949494;
   --color-pink: #CC3B89;
   --font-primary: 'Prata', serif;
   --font-secondary: 'Work Sans', sans-serif;
@@ -17,8 +17,9 @@ body {
   font-family: var(--font-secondary)
 }
 main {
+  position: relative;
   margin: auto;
-  padding: 20px;
+  padding: 0 20px;
   max-width: 1200px;
   min-height: 100vh; 
 }
@@ -37,6 +38,7 @@ img{
   width: 100%;
   border-radius: 0.1rem;
 }
+
 button{
   background-color: var(--color-black);
   color: var(--color-white);

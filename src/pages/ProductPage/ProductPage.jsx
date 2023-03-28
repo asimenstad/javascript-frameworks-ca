@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import CartDropdown from "../../components/CartDropdown/CartDropdown.jsx";
 import Discount from "../../components/Discount/Discount.jsx";
 import Rating from "../../components/Rating/Rating.jsx";
 import useApi from "../../hooks/useApi.jsx";
 import { useStore } from "../../hooks/useStore.jsx";
 import * as S from "./ProductPage.styles.jsx";
 
-function ProductPage() {
+function ProductPage(props) {
   let { id } = useParams();
   const { data, isLoading, isError } = useApi(`https://api.noroff.dev/api/v1/online-shop/${id}`);
   const { title, description, price, discountedPrice, rating, imageUrl, reviews } = data;
 
   const addToCart = useStore((state) => state.addToCart);
+  const [isActive, setIsActive] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsActive(true);
+    }, 3000);
+  });
+
   function onAddToCart() {
     addToCart(data);
   }
@@ -25,6 +33,7 @@ function ProductPage() {
 
   return (
     <main>
+      <CartDropdown isActive={isActive}></CartDropdown>
       <S.Breadcrumb>
         <li>
           <Link to="/">Home</Link>

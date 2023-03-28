@@ -19,10 +19,10 @@ function Navbar() {
       </S.MenuWrapper>
       <S.Menu isOpen={isOpen}>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <S.StyledNavLink to="/">Home</S.StyledNavLink>
         </li>
         <li>
-          <NavLink to="/contact">Contact</NavLink>
+          <S.StyledNavLink to="/contact">Contact</S.StyledNavLink>
         </li>
         <li>
           <NavLink to="/checkout">

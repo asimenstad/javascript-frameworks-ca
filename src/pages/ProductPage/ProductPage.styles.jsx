@@ -52,8 +52,7 @@ export const Price = styled.p`
 
 export const Hr = styled.hr`
   margin-top: 2rem;
-  border: solid 0.5px;
-  color: ${(props) => props.theme.color.muted};
+  border: solid 0.5px ${(props) => props.theme.color.muted};
 `;
 
 export const Reviews = styled.div`
