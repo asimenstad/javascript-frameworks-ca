@@ -54,6 +54,7 @@ export const LogoWrapper = styled(NavLink)`
 
 export const StyledNavLink = styled(NavLink)`
   background: linear-gradient(currentColor, currentColor) left bottom / 0 2px no-repeat;
+  padding-bottom: 2px;
   transition: 0.5s background-size;
   :hover {
     background-size: 100% 2px;
