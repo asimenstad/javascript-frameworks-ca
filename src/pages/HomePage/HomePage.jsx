@@ -5,6 +5,7 @@ import Search from "../../components/Search/Search.jsx";
 
 function HomePage() {
   const [searchInput, setSearchInput] = useState("");
+
   function onInputChange(e) {
     e.preventDefault();
     setSearchInput(e.target.value);
