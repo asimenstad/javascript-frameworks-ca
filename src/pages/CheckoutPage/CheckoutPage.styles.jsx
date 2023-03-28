@@ -98,11 +98,12 @@ export const Counter = styled.div`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  color: ${(props) => props.theme.color.muted};
+
   > button {
     width: 1.5rem;
     height: 1.5rem;
     padding: 0;
+    color: ${(props) => props.theme.color.muted};
     background-color: ${(props) => props.theme.color.lightGray};
     :hover {
       background-color: ${(props) => props.theme.color.lightGray};
