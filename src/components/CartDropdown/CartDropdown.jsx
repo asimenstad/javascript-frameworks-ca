@@ -5,7 +5,7 @@ import * as S from "./CartDropdown.styles.jsx";
 function CartDropdown(props) {
   const cart = useStore((state) => state.cart);
   return (
-    <S.Container>
+    <S.Container isActive={props.isActive}>
       {cart.map(({ data, quantity }) => (
         <S.Product key={data.id}>
           <S.Thumbnail src={data.imageUrl} alt={data.title} />

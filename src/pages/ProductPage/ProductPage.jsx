@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import CartDropdown from "../../components/CartDropdown/CartDropdown.jsx";
 import Discount from "../../components/Discount/Discount.jsx";
 import Rating from "../../components/Rating/Rating.jsx";
 import useApi from "../../hooks/useApi.jsx";
@@ -12,9 +13,14 @@ function ProductPage(props) {
   const { title, description, price, discountedPrice, rating, imageUrl, reviews } = data;
 
   const addToCart = useStore((state) => state.addToCart);
+  const [isActive, setIsActive] = useState(false);
 
   function onAddToCart() {
     addToCart(data);
+    setIsActive(true);
+    setTimeout(() => {
+      setIsActive(false);
+    }, 3000);
   }
 
   if (isLoading) {
@@ -26,6 +32,7 @@ function ProductPage(props) {
 
   return (
     <main>
+      <CartDropdown isActive={isActive}></CartDropdown>
       <S.Breadcrumb>
         <li>
           <Link to="/">Home</Link>
