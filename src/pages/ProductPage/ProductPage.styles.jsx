@@ -5,6 +5,7 @@ export const Breadcrumb = styled.ul`
   gap: 1rem;
   padding: 0;
   margin: 0;
+  padding-top: 20px;
   > li {
     list-style: none;
   }
@@ -23,9 +24,6 @@ export const Section = styled.section`
   }
   @media screen and (min-width: 800px) {
     flex-direction: row-reverse;
-    > div {
-      max-width: 500px;
-    }
   }
 `;
 

@@ -10,7 +10,7 @@ export const Footer = styled.footer`
 export const FooterWrapper = styled.div`
   display: flex;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   justify-content: space-between;
 `;
 

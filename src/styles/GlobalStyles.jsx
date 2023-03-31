@@ -20,7 +20,7 @@ main {
   position: relative;
   margin: auto;
   padding: 0 20px;
-  max-width: 1200px;
+  max-width: 1000px;
   min-height: 100vh; 
 }
 li {
