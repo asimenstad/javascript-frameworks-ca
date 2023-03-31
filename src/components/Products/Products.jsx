@@ -14,13 +14,25 @@ function Products(props) {
     return <div>Error</div>;
   }
 
-  const filteredProducts = data.filter((product) => {
+  const filteredProducts = [...data].filter((product) => {
     return props.searchInput === "" ? product : product.title.toLowerCase().includes(props.searchInput.toLowerCase());
   });
 
+  let products = filteredProducts;
+
+  /*
+  if (props.sortOption === "newest" || props.sortOption === "") {
+    return (products = [...filteredProducts].sort((a, b) => a - b));
+  } else if (props.sortOption === "lowest") {
+    return (products = [...filteredProducts].sort((a, b) => a.discountedPrice - b.discountedPrice));
+  } else if (props.sortOption === "highest") {
+    return (products = [...filteredProducts].sort((a, b) => b.discountedPrice - a.discountedPrice));
+  }
+  */
+
   return (
     <S.ProductsWrapper>
-      {filteredProducts.map((product) => (
+      {products.map((product) => (
         <Link to={product.id} key={product.id}>
           <Product
             imageUrl={product.imageUrl}

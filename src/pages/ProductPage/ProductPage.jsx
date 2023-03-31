@@ -7,7 +7,7 @@ import useApi from "../../hooks/useApi.jsx";
 import { useStore } from "../../hooks/useStore.jsx";
 import * as S from "./ProductPage.styles.jsx";
 
-function ProductPage(props) {
+function ProductPage() {
   let { id } = useParams();
   const { data, isLoading, isError } = useApi(`https://api.noroff.dev/api/v1/online-shop/${id}`);
   const { title, description, price, discountedPrice, rating, imageUrl, reviews } = data;

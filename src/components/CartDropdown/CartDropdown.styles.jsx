@@ -10,7 +10,7 @@ export const Container = styled.div`
   padding: 10px;
   background-color: ${(props) => props.theme.color.lightGray};
   border-top: 2px solid #000;
-  transform: ${(props) => (props.isActive ? "translateY(0)" : "translateY(-100%)")};
+  transform: ${(props) => (props.isActive ? "translateY(0)" : "translateY(-110%)")};
   transition: all 0.5s ease;
   > div:not(:first-child) {
     border-top: 1px solid ${(props) => props.theme.color.muted};

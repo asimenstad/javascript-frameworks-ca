@@ -4,8 +4,10 @@ import * as S from "./Search.styles.jsx";
 function Search(props) {
   return (
     <div>
-      <S.Label htmlFor="search">Search</S.Label>
-      <S.SearchInput
+      <label className="hidden" htmlFor="search">
+        Search
+      </label>
+      <input
         type="search"
         name="search"
         placeholder="Search"

@@ -6,7 +6,7 @@ export const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   gap: 40px;
   @media screen and (min-width: 600px) {
     flex-direction: row;
