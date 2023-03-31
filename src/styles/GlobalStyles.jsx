@@ -54,12 +54,32 @@ button{
     background-color: var(--color-pink);
   }
 }
+
 input, textarea{
   border: none;
   border-radius: 0.1rem;
   padding: 0.4rem;
 }
 
+input[type=search], select{
+  background-color: var(--color-lightGray);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.4rem 1rem;
+  position: relative;
+}
+select{
+  border-right: 0.8rem solid transparent;
+}
+.hidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 `;
 
 export default GlobalStyle;
