@@ -3,6 +3,7 @@ import Products from "../../components/Products/Products.jsx";
 import * as S from "./HomePage.styles.jsx";
 import Search from "../../components/Search/Search.jsx";
 import Sort from "../../components/Sort/Sort.jsx";
+import ScrollToTop from "../../components/ScrollToTop/ScrollToTop.jsx";
 
 function HomePage() {
   const [searchInput, setSearchInput] = useState("");
@@ -25,6 +26,7 @@ function HomePage() {
         <Search onInputChange={onInputChange} searchInput={searchInput}></Search>
         <Sort onOptionChange={onOptionChange} sortOption={sortOption}></Sort>
       </S.Section>
+      <ScrollToTop></ScrollToTop>
       <Products searchInput={searchInput}></Products>
     </main>
   );
