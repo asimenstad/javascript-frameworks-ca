@@ -8,6 +8,8 @@ html{
   --color-red: #D12121;
   --color-muted: #949494;
   --color-pink: #CC3B89;
+  --color-pinkTransparentDark: #CC3B89CC;
+  --color-pinkTransparentLight: #CC3B8933;
   --font-primary: 'Prata', serif;
   --font-secondary: 'Work Sans', sans-serif;
 }

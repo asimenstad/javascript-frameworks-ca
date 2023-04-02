@@ -6,6 +6,7 @@ import Rating from "../../components/Rating/Rating.jsx";
 import useApi from "../../hooks/useApi.jsx";
 import { useStore } from "../../hooks/useStore.jsx";
 import * as S from "./ProductPage.styles.jsx";
+import Loader from "../../components/Loader/Loader.jsx";
 
 function ProductPage() {
   let { id } = useParams();
@@ -24,7 +25,7 @@ function ProductPage() {
   }
 
   if (isLoading) {
-    return <div>Loading</div>;
+    return <Loader></Loader>;
   }
   if (isError) {
     return <div>Error</div>;
