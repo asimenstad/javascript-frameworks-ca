@@ -1,6 +1,12 @@
 import React from "react";
 import * as S from "./Discount.styles.jsx";
 
+/**
+ * Component for calculating and displaying percent of discount.
+ * @component
+ * @param {*} props - The price and discounted price of the product.
+ * @returns - The discount percent.
+ */
 function Discount(props) {
   const price = props.price;
   const discountedPrice = props.discountedPrice;

@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import * as S from "./ScrollToTop.styles";
 
+/**
+ * Scroll to top component.
+ * @component
+ * @returns - Scroll to top button.
+ */
 function ScrollToTop() {
   const [isActive, setIsActive] = useState(false);
 

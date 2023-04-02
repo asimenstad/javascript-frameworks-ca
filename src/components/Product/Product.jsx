@@ -1,6 +1,12 @@
 import React from "react";
 import * as S from "./Product.styles.jsx";
 
+/**
+ * Product card component.
+ * @component
+ * @param {object} props - Product data.
+ * @returns - Product card.
+ */
 function Product(props) {
   return (
     <div>

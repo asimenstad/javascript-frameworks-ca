@@ -1,6 +1,11 @@
 import React from "react";
 import * as S from "./Footer.styles.jsx";
 
+/**
+ * Footer component.
+ * @component
+ * @returns - Footer.
+ */
 function Footer() {
   return (
     <S.Footer>

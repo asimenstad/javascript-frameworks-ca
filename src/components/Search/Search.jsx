@@ -1,6 +1,12 @@
 import React from "react";
 import * as S from "./Search.styles.jsx";
 
+/**
+ * Search component.
+ * @component
+ * @param {*} props - Search input value and onChange function.
+ * @returns - Search bar.
+ */
 function Search(props) {
   return (
     <div>
