@@ -4,6 +4,11 @@ import * as S from "./Navbar.styles.jsx";
 import Cart from "../Cart/Cart.jsx";
 import { NavLink } from "react-router-dom";
 
+/**
+ * Navbar component with mobile hamburger menu.
+ * @component
+ * @returns - Navbar.
+ */
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
 

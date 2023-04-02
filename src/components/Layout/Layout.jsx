@@ -3,6 +3,11 @@ import { Outlet } from "react-router-dom";
 import Header from "../Header/Header.jsx";
 import Footer from "../Footer/Footer.jsx";
 
+/**
+ * Layout component
+ * @component
+ * @returns - Site layout.
+ */
 function Layout() {
   return (
     <div>

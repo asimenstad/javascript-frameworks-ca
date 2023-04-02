@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * Sort component.
+ * @component
+ * @param {*} props - Sort select value and onChange function.
+ * @returns - Sort select.
+ */
 function Sort(props) {
   return (
     <div>

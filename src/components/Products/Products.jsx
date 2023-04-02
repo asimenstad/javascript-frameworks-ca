@@ -4,6 +4,12 @@ import useApi from "../../hooks/useApi.jsx";
 import { Link } from "react-router-dom";
 import Product from "../Product/Product.jsx";
 
+/**
+ * Component for displaying list of products, search bar and sort.
+ * @component
+ * @param {string} props - Search and sort useState.
+ * @returns - Search bar, sort and list of products.
+ */
 function Products(props) {
   const { data, isLoading, isError } = useApi("https://api.noroff.dev/api/v1/online-shop");
 

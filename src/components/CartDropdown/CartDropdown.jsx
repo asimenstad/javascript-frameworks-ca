@@ -2,6 +2,12 @@ import React from "react";
 import { useStore } from "../../hooks/useStore.jsx";
 import * as S from "./CartDropdown.styles.jsx";
 
+/**
+ * Cart dropdown component that displays the products in cart.
+ * @component
+ * @param {boolean} props - Boolean useState to conditionally render the dropdown.
+ * @returns - Dropdown with products.
+ */
 function CartDropdown(props) {
   const cart = useStore((state) => state.cart);
   return (
